@@ -1,0 +1,245 @@
+/* General Navigation Styles */
+nav {
+  background-color: #1b506e;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(249, 246, 244);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ee5c0e;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Menu Animation */
+.menu-icon.active span:first-child {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:last-child {
+  transform: rotate(-45deg) translateY(-8px);
+}
+.dropdown-arrow {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.2rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Services Dropdown */
+.services-dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  align-items: center;
+  color: rgb(250, 246, 246);
+  font-weight: 600;
+  background: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0px 0;
+}
+.dropdown-button:hover{
+color: #ec4619;
+}
+
+/* Position the dropdown properly */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 14rem;
+  background-color: rgb(255, 254, 254);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(42, 40, 40, 0.164);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  margin-right: 50px;
+  transform: translateX(-30%) translateY(10px);
+}
+.dropdown-item {
+  display: block;
+  padding: 10px 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #000;
+}
+.dropdown-menu.open .dropdown-item {
+  color: #000; 
+}
+
+.dropdown-item:hover {
+  background-color: #22668D;
+  color: #f15d27;
+}
+
+/* MOBILE VIEW FIXES */
+@media (max-width: 768px) {
+  .services-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    width: 100%;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+
+  .dropdown-menu.open {
+    display: block;
+    opacity: 1;
+    max-width: 300px;
+    visibility: visible;
+    margin-right: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+  /* Ensure Dropdown Opens Below in Mobile */
+  /* .dropdown-menu {
+    position: relative;
+    top: 5px;
+    left: auto;
+    width: 100%;
+    transform: none;
+    box-shadow: none;
+  }*/
+ 
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-links {
+    padding: 15px;
+  }
+
+  .nav-links a {
+    padding: 8px;
+  }
+}

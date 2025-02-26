@@ -1,0 +1,117 @@
+/* Main container styles */
+.page-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background-color:#F2F3F3;
+    background-size: 400% 400%;
+    animation: gradientBg 15s ease infinite;
+  }
+  
+  @keyframes gradientBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .header-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(120deg, #1d6cec, #fa580d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  .header-underline {
+    width: 6rem;
+    height: 0.25rem;
+    background-color: #3b82f6;
+    margin: 0 auto;
+    border-radius: 9999px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Card styles */
+  .card-c {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px;
+  }
+    
+  .card-c:hover {
+    transform: translateY(-10px);
+    background-color: #3d5af1;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(57, 8, 183, 0.957);
+    transition: all 0.3s;
+  }
+  
+  .card-title, .card-text {
+    transition: color 0.3s ease;
+  }
+  
+  .card-c:hover .card-title,
+  .card-c:hover .card-text {
+    color: white;
+  }    
+  
+  .card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-text {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }   
+  @media (min-width: 1024px) {
+    .wide-card {
+      grid-column: span 1;
+    }
+  }
