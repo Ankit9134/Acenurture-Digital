@@ -1,0 +1,242 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden;
+}
+.hero-content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  padding: 140px 20px 80px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: -1;
+  animation: backgroundSlider 20s infinite;
+}
+
+.hero-content h1 {
+  font-size: 2rem; 
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
+  max-width: 900px;
+  color: #ffffff;
+}
+
+.hero-content .p-word {
+  font-size: 1.25rem; 
+  line-height: 1.6;
+  font-weight: 500; 
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); 
+  color: #ffffff;
+}
+
+@keyframes backgroundSlider {
+  0% {
+    background-image: url("./Assets/photo17.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  25% {
+    background-image: url("./Assets/photo3.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  50% {
+    background-image: url("./Assets/photo26.jpg");
+    background-color: rgba(0, 0, 0, 0.546);
+  }
+  
+  75% {
+    background-image: url("./Assets/photo20.jpg");
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  100% {
+    background-image: url("./Assets/photo28.jpg");
+    background-color: rgba(0, 0, 0, 0.482);
+  }
+}
+
+
+.hero-content {
+  animation: textColorChange 20s infinite;
+}
+.hero-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+  z-index: -1;
+}
+.hero-sub {
+  background: linear-gradient(rgba(255, 254, 254, 0.774), rgba(249, 249, 245, 0.792)),
+    url('./Assets/mentor.jpg') center/cover;
+  color: rgb(0, 0, 0);
+  padding: 50px 50px 0px 50px;
+  /* text-align: center; */
+  min-height: 60vh;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.hero-sub-p1 {
+  padding-bottom: 30px;
+}
+
+.hero-sub-p2 {
+  padding-bottom: 30px;
+}
+
+
+.cta-button {
+  display: inline-block;
+  background-color: #368fab;
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 1s ease 0.4s;
+}
+
+.cta-button:hover {
+  background-color: #e65c00;
+  transform: translateY(-2px);
+}
+
+/* Section Containers */
+.section-container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+
+
+/* Contact Section */
+#contact {
+  padding: 30px 0;
+  background-color: #f6f6f6;
+  color: rgb(5, 5, 5);
+}
+.section-cont {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+  margin: 0 30px;
+}
+
+.contact-info .info-item {
+  margin-bottom: 30px;
+}
+
+.contact-info h4 {
+  color: #0f0e0e;
+  margin-bottom: 10px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(10, 10, 10, 0.7);
+}
+
+.contact-form button {
+  background-color: #22668D;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e65c00;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+
+  .services-grid,
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,339 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #0f172a;
+  --background-light: #ffffff;
+  --background-gray: #f8fafc;
+  --text-dark: #1e293b;
+  --text-light: #f8fafc;
+  --hover-transition: all 0.3s ease-in-out;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-radius: 12px;
+}
+body {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+}  
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--hover-transition);
+}
+
+.primary-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Introduction Section */
+.intro-section-l {
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-section-l h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+}
+
+.intro-section-l p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.2rem;
+}
+
+.service-icons-l {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.service-icon-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+
+.service-icon-l span {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.service-icon-l p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Training Cards Styles */
+.training-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+
+.section-title-l {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--secondary-color);
+}
+
+.training-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.training-card {
+  background-color: var(--background-light);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+  transition: var(--hover-transition);
+  cursor: pointer;
+  height: 100%;
+  min-height: 280px;
+}
+
+.training-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.training-card.expanded {
+  grid-row: span 2;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-content-l {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-icon-l {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-title-l {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+  transition: var(--hover-transition);
+  text-align: center;
+}
+.training-card.expanded{
+  min-height: 500px;
+}
+.training-card:hover .card-title-l,
+.training-card.expanded .card-title-l {
+  color: var(--text-light);
+}
+
+.card-description-l {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  opacity: 0.9;
+  transition: var(--hover-transition);
+  align-self: auto;
+}
+
+.training-card:hover .card-description-l,
+.training-card.expanded .card-description-l {
+  color: var(--text-light);
+  opacity: 1;
+}
+
+.card-skills-l {
+  margin: 10px 0 20px;
+}
+
+.card-skills-l h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.card-skills-l ul {
+  list-style-type: none;
+  padding-left: 5px;
+  align-self: auto;
+}
+
+.card-skills-l li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.4;
+}
+
+.card-skills-l li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--text-light);
+}
+
+.cta-button-l {
+  margin-top: auto;
+  padding: 12px 18px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--hover-transition);
+  text-align: center;
+}
+
+.training-card:hover .cta-button-l,
+.training-card.expanded .cta-button-l {
+  background-color: var(--text-light);
+  color: var(--primary-color);
+}
+
+.cta-button-l:hover {
+  transform: scale(1.05);
+}
+
+/* Why Choose Us Section */
+.why-choose-section-l {
+  background-color: var(--background-gray);
+  padding: 30px 20px;
+}
+
+.why-choose-section-l h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.benefits-grid-l {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card-l {
+  background-color: var(--background-light);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: var(--hover-transition);
+}
+
+.benefit-card-l:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card-l span {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.benefit-card-l h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+/* Call to Action Section */
+.cta-section-l {
+  padding: 10px;
+  text-align: center;
+}
+
+.cta-title-l {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cta-section-l .primary-button:hover {
+  background-color: var(--text-light);
+  opacity: 0.9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .intro-section-l h2,
+  .why-choose-section-l h2,
+  .cta-section-l h2,
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .service-icons-l {
+    gap: 20px;
+  }
+  
+  .training-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .service-icon-l {
+    width: 150px;
+  }
+  
+  .training-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .training-card {
+    min-height: 260px;
+  }
+}
